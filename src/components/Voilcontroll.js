@@ -1,28 +1,32 @@
 import React from 'react';
+import { convart, toCelsius, toFahrenheit } from '../lib/Convart';
 import Tempcheck from './Tempcheck';
+import Tempinput from './Tempinput';
 export default class Calculator extends React.Component{
-    state = {
-        Temp: ''
-
+    state={
+        Temp:'',scal: 'c'
     }
-    OnTempChange=(e)=>{
+    handelChange=(e,scal)=>{
         this.setState({
-            Temp: e.target.value
-        })
+            Temp:e.target.value,
+            scal,
 
+        })
     }
     render() {
   
-        const {Temp}=this.state;
-    
+
+    const{Temp,scal}=this.state;
+    const celsius = scal==='f'? convart(Temp,toCelsius):
+    Temp;
+    const fahrenheit = scal==='c'? convart(Temp,toFahrenheit):
+    Temp;
         return(
             
             <div>
-                <fieldset>
-                    <legend>Input fild</legend>
-                    <input type="text" value={Temp} onChange={this.OnTempChange} />
-                </fieldset>
-             <Tempcheck  celsius={parseFloat(Temp)}  />
+                <Tempinput scal="c" Temp={celsius} OnTempChange={this.handelChange} />
+                <Tempinput scal="f" Temp={fahrenheit} OnTempChange={this.handelChange} />
+                <Tempcheck  celsius={parseFloat(Temp)}  />
 
             </div>
         )

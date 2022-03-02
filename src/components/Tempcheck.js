@@ -2,10 +2,10 @@
 
 export default function Tempcheck({celsius=0}){
     if(celsius >= 100){
-        return <p>water is voil</p>
+        return <p>water could boil</p>
     }
     else{
-        return <p>water is not voil</p>
+        return <p>water could not boil</p>
     }
    
 }
