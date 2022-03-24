@@ -1,12 +1,12 @@
 // import Emoji from "./components/composition/Emoji"; import Text from
-import Todo from "./components/Todo";
+import From from "./components/Form";
 export default function App(){
     
    
         
       
   
-        return <Todo />
+        return <From />
 
     
 
