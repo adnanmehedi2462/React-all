@@ -1,12 +1,14 @@
 // import Emoji from "./components/composition/Emoji"; import Text from
-import From from "./components/Form";
+// import LayoutComponentOne from "./components/LayoutComponent"
+import LayoutComponentTwo from "./components/LayoutComponentTwo"
 export default function App(){
     
    
         
       
   
-        return <From />
+        // return  <LayoutComponentOne />
+        return <LayoutComponentTwo />
 
     
 
